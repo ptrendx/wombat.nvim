@@ -70,7 +70,7 @@ local theme = lush(function(injected_functions)
 		-- CursorIM       { }, -- Like Cursor, but used when in IME mode |CursorIM|
 		CursorLine({ bg = termcolors[236] }), -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
 		CursorColumn({ CursorLine }), -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		-- Directory      { }, -- Directory names (and other special names in listings)
+		Directory({ fg = "#a6dbff" }), -- Directory names (and other special names in listings)
 		DiffAdd({ bg = termcolors[17] }), -- Diff mode: Added line |diff.txt|
 		DiffChange({ bg = termcolors[237] }), -- Diff mode: Changed line |diff.txt|
 		DiffDelete({ fg = termcolors[234], bg = termcolors[60] }), -- Diff mode: Deleted line |diff.txt|
