@@ -102,12 +102,12 @@ local theme = lush(function(injected_functions)
 		-- FloatBorder    { }, -- Border of floating windows.
 		-- FloatTitle     { }, -- Title of floating windows.
 		-- NormalNC       { }, -- normal text in non-current windows
-		Pmenu({ fg = termcolors[230], bg = termcolors[238] }), -- Popup menu: Normal item.
-		PmenuSel({ fg = termcolors[232], bg = termcolors[192] }), -- Popup menu: Selected item.
+		Pmenu({ fg = termcolors[230], bg = termcolors[238], gui = "none" }), -- Popup menu: Normal item.
+		PmenuSel({ fg = termcolors[17], bg = termcolors[216], gui = "bold" }), -- Popup menu: Selected item.
 		-- PmenuKind      { }, -- Popup menu: Normal item "kind"
-		-- PmenuKindSel   { }, -- Popup menu: Selected item "kind"
+		PmenuKindSel({ PmenuSel }), -- Popup menu: Selected item "kind"
 		-- PmenuExtra     { }, -- Popup menu: Normal item "extra text"
-		-- PmenuExtraSel  { }, -- Popup menu: Selected item "extra text"
+		PmenuExtraSel({ PmenuKindSel }), -- Popup menu: Selected item "extra text"
 		-- PmenuSbar      { }, -- Popup menu: Scrollbar.
 		-- PmenuThumb     { }, -- Popup menu: Thumb of the scrollbar.
 		-- Question       { }, -- |hit-enter| prompt and yes/no questions
@@ -129,7 +129,7 @@ local theme = lush(function(injected_functions)
 		WarningMsg({ fg = termcolors[203] }), -- Warning messages
 		-- Whitespace     { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- Winseparator   { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
-		-- WildMenu       { }, -- Current match in 'wildmenu' completion
+		WildMenu({ PmenuKindSel }), -- Current match in 'wildmenu' completion
 		-- WinBar         { }, -- Window bar of current window
 		-- WinBarNC       { }, -- Window bar of not-current windows
 
